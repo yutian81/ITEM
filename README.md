@@ -23,6 +23,40 @@
     <a href="#d">交流反馈</a></h4>
 </div>
 
+## 修复原项目站内搜索不生效的问题
+
+主题没有重写 /search/ 路由到主页，导致跳转到404报错
+
+修改两处地方：
+
+在根目录新建 .htaccess 文件，内容：
+
+```php
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /index.php/$1 [L]
+</IfModule>
+```
+
+修改根目录 config.inc.php 文件，增加一行：
+
+```php
+/** 开启 URL 重写 */
+define('__TYPECHO_REWRITE__', true);
+```
+
+现在搜索会正确跳转到https://daoyi.hidns.vip/search/关键词
+
+另外，主题文件夹里的 search.php 文件有一处拼写错误：
+
+原文这一行 echo Utils::pagination($pageLink, $result['currentPage'], $$result['totalPages']); ?> 最后多了一个$符号
+
+应改为 echo Utils::pagination($pageLink, $result['currentPage'], $result['totalPages']); ?>
+
 <h2 id='a'>🎉 项目说明</h2>
 
 ![screenshot][screenshot]
