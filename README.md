@@ -57,6 +57,7 @@ define('__TYPECHO_REWRITE__', true);
 
 应改为 echo Utils::pagination($pageLink, $result['currentPage'], $result['totalPages']); ?>
 
+
 <h2 id='a'>🎉 项目说明</h2>
 
 ![screenshot][screenshot]
