@@ -18,6 +18,25 @@ $this->need('sidebar.php');
 $this->need('topbar.php'); ?>
 <main class="site-main">
   <div class="container">
+    <!-- 搜索栏-->
+    <div class="col-12 mb-4">
+      <div id="search" class="search-block card card-xl">
+        <div class="card-body">
+          <div class="search-tab">
+            <?php $search = json_decode($this->options->searchConfig, true);
+  if (is_array($search) && count($search) > 0) :
+    foreach ($search as $index => $item) : ?>
+            <a href='javascript:;' data-url='<?php echo $item['url']; ?>' class='btn btn-link btn-sm btn-rounded <?php echo $index === 0 ? 'active' : ''; ?>'><i class='<?php echo $item['icon']; ?>' aria-hidden='true'></i>&nbsp;<?php echo $item['name']; ?></a>
+            <?php endforeach;
+    else : ?>
+            <a href='javascript:;' data-url='https://www.google.com/search?q=' class='btn btn-link btn-sm btn-rounded active'><i class='fab fa-google'></i>&nbsp;谷歌</a>
+            <?php endif; ?>
+          </div>
+          <form> <input type="text" class="form-control" placeholder="请输入搜索关键词并按回车键…"></form>
+        </div>
+      </div>
+    </div>
+    <!-- 热门站点-->
     <div class="row g-3 g-xl-4">
       <div class="col-12 col-lg-4 d-lg-flex hot-rank">
         <div class="card card-xl flex-fill">
@@ -31,6 +50,7 @@ $this->need('topbar.php'); ?>
           </div>
         </div>
       </div>
+      <!-- 工具直达-->
       <div class="col-12 col-lg-8 d-lg-flex tool-direct">
         <div class="card card-xl flex-fill">
           <div class="card-header">
@@ -55,23 +75,6 @@ $this->need('topbar.php'); ?>
               <?php endforeach;
               endif; ?>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12">
-        <div id="search" class="search-block card card-xl">
-          <div class="card-body">
-            <div class="search-tab">
-              <?php $search = json_decode($this->options->searchConfig, true);
-              if (is_array($search) && count($search) > 0) :
-                foreach ($search as $index => $item) : ?>
-                  <a href='javascript:;' data-url='<?php echo $item['url']; ?>' class='btn btn-link btn-sm btn-rounded <?php echo $index === 0 ? 'active' : ''; ?>'><i class='<?php echo $item['icon']; ?>' aria-hidden='true'></i>&nbsp;<?php echo $item['name']; ?></a>
-                <?php endforeach;
-              else : ?>
-                <a href='javascript:;' data-url='https://www.google.com/search?q=' class='btn btn-link btn-sm btn-rounded active'><i class='fab fa-google'></i>&nbsp;谷歌</a>
-              <?php endif; ?>
-            </div>
-            <form> <input type="text" class="form-control" placeholder="请输入搜索关键词并按回车键…"></form>
           </div>
         </div>
       </div>
