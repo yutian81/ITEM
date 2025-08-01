@@ -12,6 +12,7 @@ on:
       - '.gitignore'
       - '.docker/**'
       - '.devcontainer/**'
+      - '.github/**'
   workflow_dispatch:
 
 env:
