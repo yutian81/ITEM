@@ -13,7 +13,6 @@ on:
       - '.docker/**'
       - '.devcontainer/**'
       - '.github/**'
-  workflow_dispatch:
 
 env:
   NODE_VERSION: "22.14.0"
