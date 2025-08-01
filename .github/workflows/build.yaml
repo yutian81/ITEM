@@ -1,4 +1,4 @@
-name: Build
+name: Build Vercel
 
 on:
   push:
@@ -10,6 +10,7 @@ on:
       - '.gitignore'
       - '.docker/**'
       - '.devcontainer/**'
+      - '.github/**'
 
 env:
   NODE_VERSION: "22.14.0"
