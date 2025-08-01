@@ -42,7 +42,7 @@
 </IfModule>
 ```
 
-修改根目录 config.inc.php 文件，增加一行：
+**初始化之后**修改根目录 `config.inc.php` 文件，增加一行：
 
 ```php
 /** 开启 URL 重写 */
