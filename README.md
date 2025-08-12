@@ -178,6 +178,75 @@ define('__TYPECHO_REWRITE__', true);
 ]
 ```
 
+### 自定义css
+```css
+/* 白色半透明毛玻璃效果 */
+.card-header,
+.card-body,
+.site-wrapper,
+.list-item.block {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-header {
+    background: #565656 !important;
+    margin-bottom: 0px !important;    
+    padding: 9px 18px 9px 18px !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.card-body {
+    border-radius: 0 0 8px 8px !important;
+}
+
+.card-body,
+.site-wrapper,
+.list-item.block {
+    background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.card-header * {
+    color: #FFFFFF !important;
+}
+
+.form-control {
+  background: #E8E8E8 !important;
+}
+
+/* 暗色模式覆盖 */
+[data-bs-theme="dark"] .card-header,
+[data-bs-theme="dark"] .card-body,
+[data-bs-theme="dark"] .site-wrapper,
+[data-bs-theme="dark"] .list-item.block {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-bs-theme="dark"] .card-header {
+    background: #2D2D2D !important;
+}
+
+[data-bs-theme="dark"] .card-body,
+[data-bs-theme="dark"] .site-wrapper,
+[data-bs-theme="dark"] .list-item.block {
+    background: rgba(30, 30, 30, 0.4) !important;
+}
+
+[data-bs-theme="dark"] .form-control {
+  background: #2D2D2D !important;
+}
+
+/* 文字颜色适配 */
+.card-body *,
+.list-item.block * {
+    color: inherit !important;
+}
+```
+
 ### 时间线
 
 请在后台 `管理` > `独立页面` > `新增`，将其模板设置为 `目录/时间线`，文章类型设置为 站内文章
