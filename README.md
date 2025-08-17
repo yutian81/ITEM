@@ -57,6 +57,231 @@ define('__TYPECHO_REWRITE__', true);
 
 应改为 echo Utils::pagination($pageLink, $result['currentPage'], $result['totalPages']); ?>
 
+## 后台外观设置
+
+### 搜索引擎设置
+
+```json
+[
+    {
+        "name": "Bing",
+        "url": "https://www.bing.com/search?q=",
+        "icon": "fab fa-microsoft"
+    },
+    {
+        "name": "谷歌",
+        "url": "https://www.google.com/search?q=",
+        "icon": "fab fa-google"
+    },
+    {
+        "name": "百度",
+        "url": "https://www.baidu.com/s?wd=",
+        "icon": "fas fa-bold"
+    },
+    {
+        "name": "Github",
+        "url": "https://github.com/search?q=",
+        "icon": "fab fa-github"
+    },
+    {
+        "name": "站内搜索",
+        "url": "/search/",
+        "icon": "fas fa-search-location"
+    }
+]
+```
+
+### 工具直达
+
+```json
+[
+    {
+        "name": "今日热榜",
+        "url": "https://newsnow.busiyi.world",
+        "icon": "fas fa-fire",
+        "background": "linear-gradient(45deg, #e04a4a, #e6a82d)"
+    },
+    {
+        "name": "Github",
+        "url": "https://github.com",
+        "icon": "fab fa-github",
+        "background": "linear-gradient(45deg, #2c2f33, #4b5aa0)"
+    },
+    {
+        "name": "Cloudflare",
+        "url": "https://dash.cloudflare.com",
+        "icon": "fas fa-cloud",
+        "background": "linear-gradient(45deg, #e6892c, #e6b25a)"
+    },
+    {
+        "name": "ITDog",
+        "url": "https://www.itdog.cn/ping",
+        "icon": "fas fa-dog",
+        "background": "linear-gradient(45deg, #9440a0, #4a78c0)"
+    },
+    {
+        "name": "谷歌测速",
+        "url": "https://fiber.google.com/speedtest",
+        "icon": "fas fa-tachometer-alt",
+        "background": "linear-gradient(45deg, #457de0, #4ca95a)"
+    },
+    {
+        "name": "ProxyIP检测",
+        "url": "https://kaic.hidns.co/",
+        "icon": "fas fa-shield-alt",
+        "background": "linear-gradient(45deg, #29b0e0, #2a80e0)"
+    },
+    {
+        "name": "IP纯净度",
+        "url": "https://ping0.cc/",
+        "icon": "fas fa-filter",
+        "background": "linear-gradient(45deg, #409a40, #ddca44)"
+    },
+    {
+        "name": "IP查询",
+        "url": "https://ip125.com/myip/",
+        "icon": "fas fa-map-marker-alt",
+        "background": "linear-gradient(45deg, #596db0, #2b3870)"
+    },
+    {
+        "name": "DNS大全",
+        "url": "https://dns.icoa.cn/#china",
+        "icon": "fas fa-server",
+        "background": "linear-gradient(45deg, #3aa494, #63cfcf)"
+    },
+    {
+        "name": "短链接生成",
+        "url": "https://slink.yuzong.nyc.mn/duanlian",
+        "icon": "fas fa-link",
+        "background": "linear-gradient(45deg, #e64ce6, #4cbfdf)"
+    },
+    {
+        "name": "订阅转换",
+        "url": "https://subweb.dayutian.com/",
+        "icon": "fas fa-exchange-alt",
+        "background": "linear-gradient(45deg, #e64a7a, #e67b3f)"
+    },
+    {
+        "name": "优选订阅器",
+        "url": "https://dy.yomoh.ggff.net/",
+        "icon": "fas fa-rss",
+        "background": "linear-gradient(45deg, #e67d4f, #e6a05f)"
+    },
+    {
+        "name": "WebSSH",
+        "url": "https://ssh.yuzong.nyc.mn/",
+        "icon": "fas fa-terminal",
+        "background": "linear-gradient(45deg, #222222, #555555)"
+    },
+    {
+        "name": "Cron-job",
+        "url": "https://console.cron-job.org/",
+        "icon": "fas fa-clock",
+        "background": "linear-gradient(45deg, #7948a5, #6574a5)"
+    },
+    {
+        "name": "兰空图床",
+        "url": "https://img.811520.xyz/",
+        "icon": "fas fa-images",
+        "background": "linear-gradient(45deg, #4dbde0, #5a7be0)"
+    },
+    {
+        "name": "封面图制作",
+        "url": "https://cover.ruom.top/",
+        "icon": "fas fa-image",
+        "background": "linear-gradient(45deg, #e6809e, #e69acc)"
+    },
+    {
+        "name": "接口调试",
+        "url": "https://hoppscotch.io/",
+        "icon": "fas fa-plug",
+        "background": "linear-gradient(45deg, #7b87e0, #8752b8)"
+    },
+    {
+        "name": "即时工具箱",
+        "url": "https://www.67tool.com/",
+        "icon": "fas fa-tools",
+        "background": "linear-gradient(45deg, #4db0e0, #b04de0)"
+    }
+]
+```
+
+### 自定义css
+
+```css
+/* 白色半透明毛玻璃效果 */
+.card-header,
+.card-body,
+.site-wrapper,
+.list-item.block {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-header {
+    background: #565656 !important;
+    margin-bottom: 0px !important;    
+    padding: 9px 18px 9px 18px !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.card-body {
+    border-radius: 0 0 8px 8px !important;
+}
+
+.card-body,
+.site-wrapper,
+.list-item.block {
+    background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.card-header * {
+    color: #FFFFFF !important;
+}
+
+.form-control {
+  background: #E8E8E8 !important;
+}
+
+/* 暗色模式覆盖 */
+[data-bs-theme="dark"] .card-header,
+[data-bs-theme="dark"] .card-body,
+[data-bs-theme="dark"] .site-wrapper,
+[data-bs-theme="dark"] .list-item.block {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-bs-theme="dark"] .card-header {
+    background: #2D2D2D !important;
+}
+
+[data-bs-theme="dark"] .card-body,
+[data-bs-theme="dark"] .site-wrapper,
+[data-bs-theme="dark"] .list-item.block {
+    background: rgba(30, 30, 30, 0.4) !important;
+}
+
+[data-bs-theme="dark"] .form-control {
+  background: #2D2D2D !important;
+}
+
+/* 文字颜色适配 */
+.card-body * {
+    color: inherit !important;
+}
+.list-item .btn-icon i {
+    color: white !important;
+}
+```
+
+## 原项目说明
+
+<details>
+<summary>点击展开/折叠内容</summary>
 
 <h2 id='a'>🎉 项目说明</h2>
 
@@ -178,75 +403,6 @@ define('__TYPECHO_REWRITE__', true);
 ]
 ```
 
-### 自定义css
-```css
-/* 白色半透明毛玻璃效果 */
-.card-header,
-.card-body,
-.site-wrapper,
-.list-item.block {
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
-}
-
-.card-header {
-    background: #565656 !important;
-    margin-bottom: 0px !important;    
-    padding: 9px 18px 9px 18px !important;
-    border-radius: 8px 8px 0 0 !important;
-}
-
-.card-body {
-    border-radius: 0 0 8px 8px !important;
-}
-
-.card-body,
-.site-wrapper,
-.list-item.block {
-    background: rgba(255, 255, 255, 0.7) !important;
-}
-
-.card-header * {
-    color: #FFFFFF !important;
-}
-
-.form-control {
-  background: #E8E8E8 !important;
-}
-
-/* 暗色模式覆盖 */
-[data-bs-theme="dark"] .card-header,
-[data-bs-theme="dark"] .card-body,
-[data-bs-theme="dark"] .site-wrapper,
-[data-bs-theme="dark"] .list-item.block {
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-}
-
-[data-bs-theme="dark"] .card-header {
-    background: #2D2D2D !important;
-}
-
-[data-bs-theme="dark"] .card-body,
-[data-bs-theme="dark"] .site-wrapper,
-[data-bs-theme="dark"] .list-item.block {
-    background: rgba(30, 30, 30, 0.4) !important;
-}
-
-[data-bs-theme="dark"] .form-control {
-  background: #2D2D2D !important;
-}
-
-/* 文字颜色适配 */
-.card-body *,
-.list-item.block * {
-    color: inherit !important;
-}
-```
-
 ### 时间线
 
 请在后台 `管理` > `独立页面` > `新增`，将其模板设置为 `目录/时间线`，文章类型设置为 站内文章
@@ -256,6 +412,8 @@ define('__TYPECHO_REWRITE__', true);
 <h2 id='d'>💬 交流反馈</h2>
 
 请在 [issues][issues] 和 [discussions][discussions] 发表和交换意见，同时也欢迎贡献代码帮助我们完善项目
+
+</details>
 
 ---
 
