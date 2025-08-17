@@ -49,7 +49,7 @@
 define('__TYPECHO_REWRITE__', true);
 ```
 
-现在搜索会正确跳转到https://daoyi.hidns.vip/search/关键词
+现在搜索会正确跳转到 `https://daoyi.hidns.vip/search/关键词`
 
 ----
 
