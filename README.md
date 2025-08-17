@@ -51,12 +51,6 @@ define('__TYPECHO_REWRITE__', true);
 
 现在搜索会正确跳转到https://daoyi.hidns.vip/search/关键词
 
-另外，主题文件夹里的 search.php 文件有一处拼写错误：
-
-原文这一行 echo Utils::pagination($pageLink, $result['currentPage'], $$result['totalPages']); ?> 最后多了一个$符号
-
-应改为 echo Utils::pagination($pageLink, $result['currentPage'], $result['totalPages']); ?>
-
 ----
 
 ## 后台外观设置
