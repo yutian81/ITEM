@@ -57,9 +57,14 @@ define('__TYPECHO_REWRITE__', true);
 
 应改为 echo Utils::pagination($pageLink, $result['currentPage'], $result['totalPages']); ?>
 
+----
+
 ## 后台外观设置
 
 ### 搜索引擎设置
+
+<details>
+<summary>点击展开/折叠内容</summary>
 
 ```json
 [
@@ -90,8 +95,12 @@ define('__TYPECHO_REWRITE__', true);
     }
 ]
 ```
+</details>
 
 ### 工具直达
+
+<details>
+<summary>点击展开/折叠内容</summary>
 
 ```json
 [
@@ -205,8 +214,12 @@ define('__TYPECHO_REWRITE__', true);
     }
 ]
 ```
+</details>
 
 ### 自定义css
+
+<details>
+<summary>点击展开/折叠内容</summary>
 
 ```css
 /* 白色半透明毛玻璃效果 */
@@ -277,6 +290,9 @@ define('__TYPECHO_REWRITE__', true);
     color: white !important;
 }
 ```
+</details>
+
+----
 
 ## 原项目说明
 
